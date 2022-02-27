@@ -1,23 +1,68 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from './Home';
+import Admin from './Admin'
+import Contact from './Contact';
+
+import Inscription from './Inscription';
+import About from './About';
+import NotFound from './NotFound'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+      <BrowserRouter >
+
+        <Routes >
+
+
+
+          <Route path="/admin"
+            element={<Admin />}
+          />
+          <Route path="/"
+            element={<Home />} />
+
+
+
+
+
+
+
+
+          <Route path="/Inscription"
+            element={<Inscription />}
+          />
+
+
+
+          <Route path="/Contact"
+            element={< Contact />}
+          />
+
+          <Route path="/About"
+            element={<About />}
+          />
+
+          <Route element={< NotFound />} />
+
+        </Routes >
+      </BrowserRouter>
+
+
+
+
+      <footer class="page-footer">
+        <p>&copy; <span id="date">2022</span>
+          <span class="footer-logo">HannaBel</span>
+          build by <a href="https://www.facebook.com/safa.hasanaoui.9">safa</a>
+
+
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </footer>
+
     </div>
   );
 }
